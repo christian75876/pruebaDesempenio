@@ -1,7 +1,7 @@
 import { AutoIncrement, BelongsTo, Column, DataType, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
 import { Product } from "./product.model";
 import { Cart } from "./cart.model";
-import { User } from "./user.model";
+
 
 
 @Table({
@@ -20,14 +20,16 @@ export class ProductCart extends Model{
     @Column(DataType.INTEGER)
     cartId!: number;
     @BelongsTo(() => Cart)
-    carts!: User;
+    cart!: Cart;
   
     @ForeignKey(() => Product)
     @Column(DataType.INTEGER)
     productId!: number;
     @BelongsTo(() => Product)
-    products!: User;
+    product!: Product;;
   
     @Column(DataType.INTEGER)
     quantity!: number;
+
+
 }

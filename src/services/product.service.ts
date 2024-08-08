@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { ProductRepository } from "../repositories/product.repository";
 import { Product } from "../model/product.model";
-import Iproduct from "../interface/product";
+import Iproduct from "../interface/product.interface";
 
 @injectable()
 export class ProductService {

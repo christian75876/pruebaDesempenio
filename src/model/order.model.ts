@@ -12,7 +12,7 @@ import {
 
 import { Cart } from "./cart.model";
 import { User } from "./user.model";
-import { ProductCart } from "./productCart";
+import { ProductCart } from "./productCart.model";
 
 @Table({
   tableName: "orders",
@@ -28,7 +28,7 @@ export class Order extends Model {
   @Column(DataType.INTEGER)
   userId!: number;
   @BelongsTo(() => User)
-  users!: User;
+  user!: User;
 
   @ForeignKey(() => ProductCart)
   @Column(DataType.INTEGER)
@@ -40,5 +40,7 @@ export class Order extends Model {
   @Column({
     type: DataType.INTEGER,
   })
-  cart!: number;
+  cartId!: number;
+  @BelongsTo(()=>Cart)
+  cart!: Cart;
 }

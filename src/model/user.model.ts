@@ -7,8 +7,12 @@ import {
   Column,
   ForeignKey,
   BelongsTo,
+  HasOne,
+  HasMany,
 } from "sequelize-typescript";
 import { Role } from "./role.model";
+import { Cart } from "./cart.model";
+import { Order } from "./order.model";
 
 @Table({
   tableName: "users",
@@ -39,4 +43,10 @@ export class User extends Model {
     }) role!: number;
     @BelongsTo(()=>Role)
     roles!: Role
+
+    @HasOne(() => Cart)
+    cart!: Cart
+
+    @HasMany(() => Order)
+    orders!: Order[]
 }

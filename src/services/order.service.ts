@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { OrderReppository } from "../repositories/order.repository";
 import { Order } from "../model";
-import Iorder from "../interface/order";
+import Iorder from "../interface/order.interface";
 
 @injectable()
 export class OrderService {

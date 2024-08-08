@@ -1,5 +1,5 @@
 import { injectable } from "tsyringe";
-import Icart from "../interface/cart";
+import Icart from "../interface/cart.interface";
 import { Cart } from "../model";
 
 

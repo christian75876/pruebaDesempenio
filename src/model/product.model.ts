@@ -5,7 +5,9 @@ import {
     PrimaryKey,
     Table,
     Model,
+    HasMany,
 } from "sequelize-typescript";
+import { ProductCart } from "./productCart.model";
 
 @Table({
     tableName: "products",
@@ -28,5 +30,8 @@ export class Product extends Model {
 
     @Column(DataType.DECIMAL)
     stock!: number;
+
+    @HasMany(()=> ProductCart)
+    productCartsId!: ProductCart[]
     
 }

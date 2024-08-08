@@ -1,7 +1,7 @@
 
 import { injectable } from "tsyringe";
 import { Order, User } from "../model";
-import Iorder from "../interface/order";
+import Iorder from "../interface/order.interface";
 
 
 @injectable()
